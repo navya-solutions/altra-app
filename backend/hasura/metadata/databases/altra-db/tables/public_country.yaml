@@ -1,0 +1,7 @@
+table:
+  name: country
+  schema: public
+object_relationships:
+- name: curriculum
+  using:
+    foreign_key_constraint_on: curriculum_id

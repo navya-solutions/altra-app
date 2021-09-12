@@ -1,0 +1,29 @@
+table:
+  name: block
+  schema: public
+object_relationships:
+- name: topic
+  using:
+    foreign_key_constraint_on: topic_id
+array_relationships:
+- name: block_change_requests
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: block_change_request
+        schema: public
+- name: block_tags
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: block_tag
+        schema: public
+- name: languages
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: language
+        schema: public

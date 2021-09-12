@@ -1,0 +1,15 @@
+table:
+  name: topic_label
+  schema: public
+object_relationships:
+- name: curriculum
+  using:
+    foreign_key_constraint_on: curriculum_id
+array_relationships:
+- name: topics
+  using:
+    foreign_key_constraint_on:
+      column: topic_label_id
+      table:
+        name: topic
+        schema: public

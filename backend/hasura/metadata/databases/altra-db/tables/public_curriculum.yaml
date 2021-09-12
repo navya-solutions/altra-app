@@ -1,0 +1,39 @@
+table:
+  name: curriculum
+  schema: public
+array_relationships:
+- name: countries
+  using:
+    foreign_key_constraint_on:
+      column: curriculum_id
+      table:
+        name: country
+        schema: public
+- name: curriculum_change_requests
+  using:
+    foreign_key_constraint_on:
+      column: curriculum_id
+      table:
+        name: curriculum_change_request
+        schema: public
+- name: institutions
+  using:
+    foreign_key_constraint_on:
+      column: curriculum_id
+      table:
+        name: institution
+        schema: public
+- name: topic_labels
+  using:
+    foreign_key_constraint_on:
+      column: curriculum_id
+      table:
+        name: topic_label
+        schema: public
+- name: topics
+  using:
+    foreign_key_constraint_on:
+      column: curriculum_id
+      table:
+        name: topic
+        schema: public

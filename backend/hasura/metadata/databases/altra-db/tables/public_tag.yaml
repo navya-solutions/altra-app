@@ -1,0 +1,25 @@
+table:
+  name: tag
+  schema: public
+object_relationships:
+- name: tag
+  using:
+    foreign_key_constraint_on: topic_interests_id
+- name: tagByLevelInterestsId
+  using:
+    foreign_key_constraint_on: level_interests_id
+array_relationships:
+- name: tags
+  using:
+    foreign_key_constraint_on:
+      column: topic_interests_id
+      table:
+        name: tag
+        schema: public
+- name: tagsByLevelInterestsId
+  using:
+    foreign_key_constraint_on:
+      column: level_interests_id
+      table:
+        name: tag
+        schema: public
