@@ -7,7 +7,7 @@ Backend library requires:
 1. Node
 2. Docker
 3. Docker-compose
-4. Harsura CLI
+4. Hasura CLI
 
 ## Getting Started
 
@@ -43,6 +43,8 @@ hasura metadata reload
 ```
 
 6. Verfiy Hasura configuration, use `http://localhost:8080/console/` to
+
+7. Change karate test scenarios and re-run the docker-compose up to execute the test casese.
 
 #### How to access PostgresSQL DB from local system
 

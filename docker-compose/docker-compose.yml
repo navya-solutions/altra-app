@@ -10,6 +10,7 @@ services:
       - 65432:5432
     environment:
       POSTGRES_PASSWORD: postgrespassword
+
   graphql-engine:
     image: hasura/graphql-engine:v2.0.7
     container_name: hasura
@@ -53,6 +54,19 @@ services:
       - elasticsearch
     ports:
       - 5601:5601
+
+  karate:
+    build: ../backend/karate
+    container_name: karate
+    ports:
+      - "5900:5900"
+    depends_on:
+      - "graphql-engine"
+    volumes:
+      # Tests to be run:
+      - ../backend/karate/tests:/src/features
+      # Where results will be generated:
+      - ../backend/karate/results:/src/target
 
 volumes:
   # default dir on Ubuntu: /var/lib/docker/volumes
