@@ -56,7 +56,8 @@ services:
       - 5601:5601
 
   karate:
-    build: ../backend/karate
+    #build: ../backend/karate
+    image: navyasolutions/karate:latest
     container_name: karate
     ports:
       - "5900:5900"

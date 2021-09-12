@@ -1,3 +1,4 @@
 /node_modules
 .env
 /karate/results
+karate.jar
