@@ -5,8 +5,8 @@ Background:
 
 
 Scenario: Can Create Block
-    Given def query = read('create_block.gql')
-    And def block_spec = read('json/block_spec.json')
+    Given def query = read('../create_block.gql')
+    And def block_spec = read('../json/block_spec.json')
     And def variables = { block_spec : '#(block_spec)'   }
     
     And request { query: '#(query)',  variables: '#(variables)' }
