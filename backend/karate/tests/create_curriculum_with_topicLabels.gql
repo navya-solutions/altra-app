@@ -1,4 +1,4 @@
-mutation create_curriculum {
+mutation create_curriculum_with_topicLabels {
   insert_curriculum(
     objects: {
       description: "Curriculum description"
