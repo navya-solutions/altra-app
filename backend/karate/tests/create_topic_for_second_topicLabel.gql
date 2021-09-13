@@ -1,0 +1,78 @@
+mutation create_topic_for_second_topicLabel {
+  insert_topic(
+    objects: [
+      {
+        curriculum_id: "1"
+        topic_label_id: "2"
+        title: "NATIONAL_5"
+        topic_unit_title: "NATIONAL_5-Maths"
+        description: "NATIONAL_5-Maths description"
+        has_children: true
+        label: "Section"
+        parent_id: "1"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "2"
+        title: "HIGHER"
+        topic_unit_title: "HIGHER-Maths"
+        description: "HIGHER-Maths description"
+        has_children: true
+        label: "Section"
+        parent_id: "1"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "2"
+        title: "Avd. HIGHER"
+        topic_unit_title: "Avd. HIGHER-Maths"
+        description: "Avd. HIGHER-Maths description"
+        has_children: true
+        label: "Section"
+        parent_id: "1"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "2"
+        title: "NATIONAL_5"
+        topic_unit_title: "NATIONAL_5-History"
+        description: "NATIONAL_5-History description"
+        has_children: true
+        label: "Section"
+        parent_id: "2"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "2"
+        title: "NATIONAL_5"
+        topic_unit_title: "NATIONAL_5-Science"
+        description: "NATIONAL_5-Science description"
+        has_children: true
+        label: "Section"
+        parent_id: "3"
+      }
+    ]
+  ) {
+    returning {
+      curriculum {
+        description
+        has_public_access
+      }
+      description
+      has_children
+      id
+      label
+      parent_id
+      same_as
+      similar_to
+      title
+      curriculum_id
+      topic_label {
+        id
+        sequence
+        title
+      }
+    }
+    affected_rows
+  }
+}

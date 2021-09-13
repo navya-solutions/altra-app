@@ -1,0 +1,58 @@
+mutation create_topic_for_third_topicLabel {
+  insert_topic(
+    objects: [
+      {
+        curriculum_id: "1"
+        topic_label_id: "3"
+        title: "Statistics"
+        topic_unit_title: "Statistics-NATIONAL_5-Maths"
+        description: "Statistics-NATIONAL_5-Maths description"
+        has_children: true
+        label: "Part"
+        parent_id: "4"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "3"
+        title: "Geometry"
+        topic_unit_title: "Geometry-NATIONAL_5-Maths"
+        description: "Geometry-NATIONAL_5-Maths description"
+        has_children: true
+        label: "Part"
+        parent_id: "4"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "3"
+        title: "Algebra"
+        topic_unit_title: "Algebra-NATIONAL_5-Maths"
+        description: "Algebra-NATIONAL_5-Maths description"
+        has_children: true
+        label: "Part"
+        parent_id: "4"
+      }
+    ]
+  ) {
+    returning {
+      curriculum {
+        description
+        has_public_access
+      }
+      description
+      has_children
+      id
+      label
+      parent_id
+      same_as
+      similar_to
+      title
+      curriculum_id
+      topic_label {
+        id
+        sequence
+        title
+      }
+    }
+    affected_rows
+  }
+}

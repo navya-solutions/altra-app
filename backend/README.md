@@ -42,9 +42,15 @@ hasura migrate apply
 hasura metadata reload
 ```
 
-6. Verfiy Hasura configuration, use `http://localhost:8080/console/` to
+6. Verfiy Hasura configuration, using `http://localhost:8080/console/`
 
-7. Change karate test scenarios and re-run the docker-compose up to execute the test casese.
+7. For creating test data Or running test scenarios :
+
+```shell
+docker-compose up
+```
+
+Note! Test result repot is created at backend/karate/results folder
 
 #### How to access PostgresSQL DB from local system
 
