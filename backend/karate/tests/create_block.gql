@@ -1,0 +1,18 @@
+mutation create_bolck($block_spec: jsonb) {
+  insert_block(objects: { archived: false, block_type: "page", has_public_access: false, topic_id: "1", block: $block_spec }) {
+    affected_rows
+    returning {
+      block
+      archived
+      block_type
+      created_time
+      has_public_access
+      id
+      ref_block_id
+      topic_id
+      url
+      voting_minus_count
+      voting_plus_count
+    }
+  }
+}

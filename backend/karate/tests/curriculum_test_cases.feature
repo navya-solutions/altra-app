@@ -44,7 +44,7 @@ Scenario: Can Create Topic for second level TopicLabel
     * match response == "#object"
     * match response.errors == '#notpresent'
     * def row_obj = response.data.insert_topic
-    * match row_obj contains { affected_rows : 3 }
+    * match row_obj contains { affected_rows : 5 }
 
 Scenario: Can Create Topic for third level TopicLabel
     Given def query = read('create_topic_for_third_topicLabel.gql')
@@ -58,7 +58,7 @@ Scenario: Can Create Topic for third level TopicLabel
     * match response == "#object"
     * match response.errors == '#notpresent'
     * def row_obj = response.data.insert_topic
-    * match row_obj contains { affected_rows : 5 }
+    * match row_obj contains { affected_rows : 3 }
 
 Scenario: Can Create Topic for fourth level TopicLabel
     Given def query = read('create_topic_for_fourth_topicLabel.gql')
