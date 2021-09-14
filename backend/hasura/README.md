@@ -65,6 +65,10 @@ hasura migrate apply
 hasura md export
 ```
 
+Additional Hasura command
+ hasura md diff - Preview the diff between Hasura metadata on Server and on local machine
+ hasura md export - Export Hasura GraphQL engine metadata from the database to local configuration
+
 ### Step to apply the project changes to GraphQL Engine
 
 1. Install Hasura and configure the Database connection

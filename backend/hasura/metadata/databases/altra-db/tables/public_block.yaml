@@ -27,3 +27,30 @@ array_relationships:
       table:
         name: language
         schema: public
+event_triggers:
+- definition:
+    delete:
+      columns: "*"
+    enable_manual: false
+    insert:
+      columns: "*"
+    update:
+      columns:
+      - created_time
+      - last_edited_time
+      - topic_id
+      - voting_minus_count
+      - voting_plus_count
+      - archived
+      - has_public_access
+      - block_type
+      - ref_block_id
+      - url
+      - id
+      - block
+  name: block_events
+  retry_conf:
+    interval_sec: 10
+    num_retries: 0
+    timeout_sec: 60
+  webhook: http://host.docker.internal:7000/block/block_events
