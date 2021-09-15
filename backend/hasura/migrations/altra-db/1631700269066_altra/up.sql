@@ -1,10 +1,10 @@
 -- liquibase formatted sql
 
 -- changeset a316916:1631699988721-1
-CREATE TABLE "block_aud" ("id" SERIAL NOT NULL, "rev" INTEGER NOT NULL, "revtype" SMALLINT, "voting_minus_count" BIGINT, "archived" BOOLEAN, "block" JSON, "block_type" VARCHAR(255), "created_time" BIGINT, "has_public_access" BOOLEAN, "last_edited_time" BIGINT, "ref_block_pid" VARCHAR(255), "url" VARCHAR(255), "voting_plus_count" BIGINT, CONSTRAINT "block_aud_pkey" PRIMARY KEY ("id", "rev"));
+CREATE TABLE "block_aud" ("id" SERIAL NOT NULL, "rev" INTEGER NOT NULL, "revtype" SMALLINT, "voting_minus_count" BIGINT, "archived" BOOLEAN, "block" JSONB, "block_type" VARCHAR(255), "created_time" BIGINT, "has_public_access" BOOLEAN, "last_edited_time" BIGINT, "ref_block_pid" VARCHAR(255), "url" VARCHAR(255), "voting_plus_count" BIGINT, CONSTRAINT "block_aud_pkey" PRIMARY KEY ("id", "rev"));
 
 -- changeset a316916:1631699988721-2
-CREATE TABLE "block" ("id" SERIAL NOT NULL, "voting_minus_count" BIGINT, "archived" BOOLEAN NOT NULL, "block" JSON, "block_type" VARCHAR(255), "created_time" BIGINT, "has_public_access" BOOLEAN NOT NULL, "last_edited_time" BIGINT, "ref_block_pid" VARCHAR(255), "url" VARCHAR(255), "voting_plus_count" BIGINT, "language_id" BIGINT, "topic_id" BIGINT, CONSTRAINT "block_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "block" ("id" SERIAL NOT NULL, "voting_minus_count" BIGINT, "archived" BOOLEAN NOT NULL, "block" JSONB, "block_type" VARCHAR(255), "created_time" BIGINT, "has_public_access" BOOLEAN NOT NULL, "last_edited_time" BIGINT, "ref_block_pid" VARCHAR(255), "url" VARCHAR(255), "voting_plus_count" BIGINT, "language_id" BIGINT, "topic_id" BIGINT, CONSTRAINT "block_pkey" PRIMARY KEY ("id"));
 
 -- changeset a316916:1631699988721-3
 CREATE TABLE "block_tag" ("id" SERIAL NOT NULL, "topic_ref_pid" VARCHAR(255), "topic_title" VARCHAR(255), "block_id" BIGINT, CONSTRAINT "block_tag_pkey" PRIMARY KEY ("id"));

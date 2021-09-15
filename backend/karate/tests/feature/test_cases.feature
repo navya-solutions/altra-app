@@ -27,7 +27,7 @@ Scenario: Can Create Languages
     * status 200
     * match response == "#object"
     * match response.errors == '#notpresent'
-    * def row_obj = response.data.insert_country
+    * def row_obj = response.data.insert_language
     * match row_obj contains { affected_rows : 2 }
 
 Scenario: Can Create Curriculum

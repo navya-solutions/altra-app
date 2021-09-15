@@ -8,7 +8,6 @@ mutation create_bolck($block_spec: jsonb) {
       created_time
       has_public_access
       id
-      ref_block_id
       topic_id
       url
       voting_minus_count
