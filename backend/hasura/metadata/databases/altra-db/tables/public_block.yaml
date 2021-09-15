@@ -2,6 +2,9 @@ table:
   name: block
   schema: public
 object_relationships:
+- name: language
+  using:
+    foreign_key_constraint_on: language_id
 - name: topic
   using:
     foreign_key_constraint_on: topic_id
@@ -20,34 +23,28 @@ array_relationships:
       table:
         name: block_tag
         schema: public
-- name: languages
-  using:
-    foreign_key_constraint_on:
-      column: block_id
-      table:
-        name: language
-        schema: public
 event_triggers:
 - definition:
     delete:
       columns: "*"
-    enable_manual: false
+    enable_manual: true
     insert:
       columns: "*"
     update:
       columns:
-      - created_time
       - last_edited_time
-      - topic_id
-      - voting_minus_count
-      - voting_plus_count
-      - archived
-      - has_public_access
-      - block_type
-      - ref_block_id
-      - url
+      - created_time
       - id
       - block
+      - ref_block_pid
+      - has_public_access
+      - archived
+      - url
+      - language_id
+      - voting_minus_count
+      - voting_plus_count
+      - topic_id
+      - block_type
   name: block_events
   retry_conf:
     interval_sec: 10

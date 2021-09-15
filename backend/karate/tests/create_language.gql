@@ -1,0 +1,10 @@
+mutation create_languages {
+  insert_language(objects: [{ short_code: "EN", title: "English" }, { short_code: "SV", title: "Swedish" }]) {
+    affected_rows
+    returning {
+      short_code
+      title
+      id
+    }
+  }
+}

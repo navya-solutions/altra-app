@@ -24,25 +24,29 @@ Backend library requires:
 npm install --global hasura-cli
 ```
 
-3.  Go to hasura folder and import Hasura application metadata
+3.  Go to hasura folder and import Hasura application metadata, using
 
 ```shell
 hasura metadata apply
 ```
 
-4. Apply migration script to configure Harusa GraphQL Engine
+4. Apply migration script to configure Harusa GraphQL Engine, using
 
 ```shell
 hasura migrate apply
 ```
 
-5. Reload Hasura GraphQL engine metadata
+5. Reload Hasura GraphQL engine metadata, using
 
 ```shell
 hasura metadata reload
 ```
 
-6. Verfiy Hasura configuration, using `http://localhost:8080/console/`
+6. Run Hasura console using Hasura CLI, using `http://localhost:8080/console/` Or
+
+```shell
+hasura console
+```
 
 7. For creating test data Or running test scenarios :
 

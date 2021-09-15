@@ -5,8 +5,17 @@ mutation create_curriculum_with_topicLabels {
       has_public_access: true
       short_title: "CFE"
       title: "Curriculum for Excellence"
- 
-    }
+      country_id: "1"
+      topic_labels: 
+      { data: 
+      [
+        { sequence: 1, title: "Subject" }, 
+        { sequence: 2, title: "Section" }, 
+        { sequence: 3, title: "Parts" }, 
+        { sequence: 4, title: "Key Issues" }
+        ]
+         }
+      }
   ) {
     returning {
       id
@@ -20,7 +29,6 @@ mutation create_curriculum_with_topicLabels {
         sequence
         title
       }
-      ref_curriculum_id
     }
   }
 }

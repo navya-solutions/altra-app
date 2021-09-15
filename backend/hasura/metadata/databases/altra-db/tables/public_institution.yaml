@@ -1,11 +1,14 @@
 table:
   name: institution
   schema: public
-object_relationships:
-- name: curriculum
-  using:
-    foreign_key_constraint_on: curriculum_id
 array_relationships:
+- name: curriculums
+  using:
+    foreign_key_constraint_on:
+      column: institution_id
+      table:
+        name: curriculum
+        schema: public
 - name: users
   using:
     foreign_key_constraint_on:

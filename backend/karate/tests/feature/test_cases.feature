@@ -4,7 +4,33 @@ Background:
 * url 'http://host.docker.internal:8080/v1/graphql'
 
 
-Scenario: Can Create Curriculum with TopicLabels
+Scenario: Can Create Countries
+    Given def query = read('../create_country.gql')
+    And request { query: '#(query)' }
+    #And header x-hasura-admin-secret = 'admin_secret_for_testing'
+    #And header x-hasura-role = 'admin'
+    #And header x-hasura-user-id = 1
+    When method post
+    * status 200
+    * match response == "#object"
+    * match response.errors == '#notpresent'
+    * def row_obj = response.data.insert_country
+    * match row_obj contains { affected_rows : 2 }
+
+Scenario: Can Create Languages
+    Given def query = read('../create_language.gql')
+    And request { query: '#(query)' }
+    #And header x-hasura-admin-secret = 'admin_secret_for_testing'
+    #And header x-hasura-role = 'admin'
+    #And header x-hasura-user-id = 1
+    When method post
+    * status 200
+    * match response == "#object"
+    * match response.errors == '#notpresent'
+    * def row_obj = response.data.insert_country
+    * match row_obj contains { affected_rows : 2 }
+
+Scenario: Can Create Curriculum
     Given def query = read('../create_curriculum_with_topicLabels.gql')
     #And def variables = { title: 'karate_test', content: 'This is a test post for my Karate unit test.', status: 'draft' }
     And request { query: '#(query)' }

@@ -1,0 +1,10 @@
+mutation create_countries {
+  insert_country(objects: [{ iso3short_code: "GBR", name: "United Kingdom" }, { iso3short_code: "SWE", name: "Sweden" }]) {
+    affected_rows
+    returning {
+      id
+      iso3short_code
+      name
+    }
+  }
+}

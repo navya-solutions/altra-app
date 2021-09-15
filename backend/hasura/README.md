@@ -38,8 +38,8 @@ reload        Reload Hasura GraphQL engine metadata on the database
 
 Remove "pid" as there is no need to maintain another unique key a part from ID in Hasura
 
-- "pid" VARCHAR(255) NOT NULL
-- "pid" VARCHAR(255)
+- "pid" VARCHAR(255) NOT NULL,
+- "pid" VARCHAR(255),
 - all alter table with"pid"
 - "id" BIGINT --> "id" SERIAL
 
@@ -49,7 +49,13 @@ Remove "pid" as there is no need to maintain another unique key a part from ID i
 hasura migrate create altra --database-name altra-db
 ```
 
-This command will create up and down migration SQL files in the migrations directory.
+6. Above command will create up and down migration SQL files in the migrations directory.
+Now, crete the database connection manully using Hasura console:
+Goto Hasura console, Data tab->Connect Database option to configure postgres DB
+1. Database Display Name: altra-db
+2. Data Source Driver: PostgreSQL
+3. Connect Database Via: Database URL
+4. Database URL: postgres://postgres:postgrespassword@postgres:5432/postgres
 
 add the SQL statement to the up.sql file and apply the migration by running:
 
@@ -57,17 +63,17 @@ add the SQL statement to the up.sql file and apply the migration by running:
 hasura migrate apply
 ```
 
-6. Go to hasura console and apply the table and relationships tracking manually.
+7. Go to hasura console and apply the table and relationships tracking manually.
 
-7. Export GraphQL engine metadata from the database to local repo:
+8. Export GraphQL engine metadata from the database to local repo:
 
 ```shell
 hasura md export
 ```
 
 Additional Hasura command
- hasura md diff - Preview the diff between Hasura metadata on Server and on local machine
- hasura md export - Export Hasura GraphQL engine metadata from the database to local configuration
+hasura md diff - Preview the diff between Hasura metadata on Server and on local machine
+hasura md export - Export Hasura GraphQL engine metadata from the database to local configuration
 
 ### Step to apply the project changes to GraphQL Engine
 

@@ -1,7 +1,11 @@
 table:
   name: language
   schema: public
-object_relationships:
-- name: block
+array_relationships:
+- name: blocks
   using:
-    foreign_key_constraint_on: block_id
+    foreign_key_constraint_on:
+      column: language_id
+      table:
+        name: block
+        schema: public
