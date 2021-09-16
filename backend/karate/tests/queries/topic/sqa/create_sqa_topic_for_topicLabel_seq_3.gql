@@ -1,34 +1,14 @@
-mutation create_topic_for_second_topicLabel {
+mutation create_sqa_topic_for_topicLabel_seq_3 {
   insert_topic(
     objects: [
       {
         curriculum_id: "1"
-        topic_label_id: "2"
-        title: "NATIONAL_5"
-        topic_unit_title: "NATIONAL_5-Maths"
-        description: "NATIONAL_5-Maths description"
+        topic_label_id: "10"
+        title: "AVD_HIGHER"
+        topic_unit_title: "AVD_HIGHER_SQA"
+        description: "AVD_HIGHER_SQA description"
         has_children: true
-        label: "Section"
-        parent_id: "1"
-      }
-      {
-        curriculum_id: "1"
-        topic_label_id: "2"
-        title: "HIGHER"
-        topic_unit_title: "HIGHER-Maths"
-        description: "HIGHER-Maths description"
-        has_children: true
-        label: "Section"
-        parent_id: "1"
-      }
-      {
-        curriculum_id: "1"
-        topic_label_id: "2"
-        title: "Avd. HIGHER"
-        topic_unit_title: "Avd. HIGHER-Maths"
-        description: "Avd. HIGHER-Maths description"
-        has_children: true
-        label: "Section"
+        label: "Benchmark"
         parent_id: "1"
       }
       {

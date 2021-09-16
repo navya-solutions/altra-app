@@ -1,0 +1,11 @@
+mutation create_cinstitution {
+  insert_institution(objects: { description: "SCOTTISH_GOVERNEMNT", ref_id: "", name: "SCOTTISH_GOVERNEMNT" }) {
+    affected_rows
+    returning {
+      description
+      id
+      ref_id
+      name
+    }
+  }
+}

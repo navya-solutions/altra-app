@@ -1,0 +1,78 @@
+mutation create_cfe_topic_for_topicLabel_seq_5 {
+  insert_topic(
+    objects: [
+      {
+        curriculum_id: "1"
+        topic_label_id: "5"
+        parent_id: "10"
+        title: "Early"
+        topic_unit_title: "EARLY-ESTIMATION_AND_ROUNDING-CFE"
+        description: "EARLY-ESTIMATION_AND_ROUNDING-CFE description"
+        has_children: false
+        label: "Es and O"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "5"
+        parent_id: "10"
+        title: "First"
+        topic_unit_title: "FIRST-ESTIMATION_AND_ROUNDING-CFE"
+        description: "FIRST-ESTIMATION_AND_ROUNDING-CFE description"
+        has_children: false
+        label: "Es and O"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "5"
+        parent_id: "10"
+        title: "Second"
+        topic_unit_title: "SECOND-ESTIMATION_AND_ROUNDING-CFE"
+        description: "SECOND-ESTIMATION_AND_ROUNDING-CFE description"
+        has_children: false
+        label: "Es and O"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "5"
+        parent_id: "10"
+        title: "Third"
+        topic_unit_title: "THIRD-ESTIMATION_AND_ROUNDING-CFE"
+        description: "THIRD-ESTIMATION_AND_ROUNDING-CFE description"
+        has_children: false
+        label: "Es and O"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "5"
+        parent_id: "10"
+        title: "Fourth"
+        topic_unit_title: "FOURTH-ESTIMATION_AND_ROUNDING-CFE"
+        description: "FOURTH-ESTIMATION_AND_ROUNDING-CFE description"
+        has_children: false
+        label: "Es and O"
+      }
+    ]
+  ) {
+    returning {
+      curriculum {
+        description
+        has_public_access
+      }
+      description
+      has_children
+      id
+      label
+      parent_id
+      same_as
+      similar_to
+      title
+      curriculum_id
+      topic_label {
+        id
+        sequence
+        title
+      }
+    }
+    affected_rows
+  }
+}

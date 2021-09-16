@@ -1,0 +1,57 @@
+mutation create_curriculum_with_topicLabels {
+  insert_curriculum(
+    objects: [
+      {
+        description: "Curriculum for Excellence places learners at the heart of education. At its centre are four fundamental capacities..."
+        has_public_access: true
+        short_title: "CFE"
+        title: "Curriculum for Excellence"
+        country_id: "1"
+        institution_id: "1"
+        topic_labels: {
+          data: [
+            { sequence: 1, title: "cfe_root" }
+            { sequence: 2, title: "Subject Area" }
+            { sequence: 3, title: "Benchmark" }
+            { sequence: 4, title: "Curriculum organiser" }
+            { sequence: 5, title: "Es and O" }
+            { sequence: 6, title: "Support Benchmark" }
+          ]
+        }
+      }
+      {
+        description: "The Scottish Qualifications Authority is the executive non-departmental public body of the Scottish Government responsible for accrediting educational awards..."
+        has_public_access: true
+        short_title: "SQA"
+        title: "Scottish Qualifications Authority"
+        country_id: "1"
+        institution_id: "1"
+        topic_labels: {
+          data: [
+            { sequence: 1, title: "sqa_root" }
+            { sequence: 2, title: "Subject" }
+            { sequence: 3, title: "Section" }
+            { sequence: 4, title: "Part" }
+            { sequence: 5, title: "Key Issue" }
+            { sequence: 6, title: "Key Issue Explanation" }
+          ]
+        }
+      }
+    ]
+  ) {
+    affected_rows
+    returning {
+      id
+      has_public_access
+      description
+      short_title
+      title
+      topic_labels {
+        curriculum_id
+        id
+        sequence
+        title
+      }
+    }
+  }
+}

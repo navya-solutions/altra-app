@@ -1,0 +1,27 @@
+query get_all_curriculums_with_all_topic_labels_and_topics {
+  curriculum {
+    has_public_access
+    id
+    short_title
+    title
+    institution {
+      name
+      id
+    }
+    topic_labels {
+      sequence
+      title
+      id
+      topics {
+        label
+        title
+        has_children
+        description
+        parent_id
+        id
+        topic_unit_title
+        topic_label_id
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+mutation create_cfe_topic_for_topicLabel_seq_4 {
+  insert_topic(
+    objects: [
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "Estimation and rounding"
+        topic_unit_title: "ESTIMATION_AND_ROUNDING-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "ESTIMATION_AND_ROUNDING-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: true
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "Number and number processes"
+        topic_unit_title: "NUMBER_AND_NUMBER_PROCESSES-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "NUMBER_AND_NUMBER_PROCESSES-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "Multiples, factors and primes"
+        topic_unit_title: "MULTIPLES_FACTORS_AND_PRIMES-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "MULTIPLES_FACTORS_AND_PRIMES-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "Powers and roots"
+        topic_unit_title: "POWERS_AND_ROOTS-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "POWERS_AND_ROOTS-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "Fractions, decimal fractions and percentages"
+        topic_unit_title: "FRACTIONS_DECIMAL_FRACTIONS_AND_PERCENTAGES-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "FRACTIONS_DECIMAL_FRACTIONS_AND_PERCENTAGES-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "Money"
+        topic_unit_title: "MONEY-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "MONEY-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "7"
+        title: "TIME"
+        topic_unit_title: "TIME-NUMBER_MONEY_AND_MEASURE-CFE"
+        description: "TIME-NUMBER_MONEY_AND_MEASURE-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "8"
+        title: "Properties of 2D shapes and 3D objects"
+        topic_unit_title: "2D_3D_SHAPES_AND_OBJECTS-SHAPE_POSITION_AND_MOVEMENT-CFE"
+        description: "2D_3D_SHAPES_AND_OBJECTS-SHAPE_POSITION_AND_MOVEMENT-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "8"
+        title: "Angle, symmetry and transformation"
+        topic_unit_title: "ANGLE_SYMMETRY_AND_TRANSFORMATION-SHAPE_POSITION_AND_MOVEMENT-CFE"
+        description: "ANGLE_SYMMETRY_AND_TRANSFORMATION-SHAPE_POSITION_AND_MOVEMENT-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "9"
+        title: "Data and analysis"
+        topic_unit_title: "DATA_AND_ANALYSIS-INFORMATION-INFOMATION_HANDLING-CFE"
+        description: "DATA_AND_ANALYSIS-INFOMATION_HANDLING-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "4"
+        parent_id: "9"
+        title: "Ideas of chance and uncertainty"
+        topic_unit_title: "IDEAS_OF_CHACE_AND_UNCERTAINTY-INFORMATION-INFOMATION_HANDLING-CFE"
+        description: "IDEAS_OF_CHACE_AND_UNCERTAINTY-INFOMATION_HANDLING-CFE description"
+        has_children: false
+        label: "Curriculum organiser"
+      }
+    ]
+  ) {
+    returning {
+      curriculum {
+        description
+        has_public_access
+      }
+      description
+      has_children
+      id
+      label
+      parent_id
+      same_as
+      similar_to
+      title
+      curriculum_id
+      topic_label {
+        id
+        sequence
+        title
+      }
+    }
+    affected_rows
+  }
+}

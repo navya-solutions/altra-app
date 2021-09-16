@@ -1,0 +1,58 @@
+mutation create_cfe_topic_for_topicLabel_seq_3 {
+  insert_topic(
+    objects: [
+      {
+        curriculum_id: "1"
+        topic_label_id: "3"
+        parent_id: "4"
+        title: "Number, money and measure"
+        topic_unit_title: "NUMBER_MONEY_AND_MEASURE-NUMAERACY_AND_MATHEMATICS-CFE"
+        description: "NUMBER_MONEY_AND_MEASURE-NUMAERACY_AND_MATHEMATICS-CFE description"
+        has_children: true
+        label: "Benchmark"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "3"
+        parent_id: "4"
+        title: "Shape, position and movement"
+        topic_unit_title: "SHAPE_POSITION_AND_MOVEMENT-NUMAERACY_AND_MATHEMATICS-CFE"
+        description: "SHAPE_POSITION_AND_MOVEMENT-NUMAERACY_AND_MATHEMATICS-CFE description"
+        has_children: true
+        label: "Benchmark"
+      }
+      {
+        curriculum_id: "1"
+        topic_label_id: "3"
+        parent_id: "4"
+        title: "Information handling"
+        topic_unit_title: "INFOMATION_HANDLING-NUMAERACY_AND_MATHEMATICS-CFE"
+        description: "INFOMATION_HANDLING-NUMAERACY_AND_MATHEMATICS-CFE description"
+        has_children: true
+        label: "Benchmark"
+      }
+    ]
+  ) {
+    returning {
+      curriculum {
+        description
+        has_public_access
+      }
+      description
+      has_children
+      id
+      label
+      parent_id
+      same_as
+      similar_to
+      title
+      curriculum_id
+      topic_label {
+        id
+        sequence
+        title
+      }
+    }
+    affected_rows
+  }
+}

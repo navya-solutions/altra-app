@@ -1,0 +1,39 @@
+mutation create_cfe_topic_for_topicLabel_seq_1 {
+  insert_topic(
+    objects: [
+      {
+        curriculum_id: "1"
+        topic_label_id: "1"
+        title: "Mathematics"
+        topic_unit_title: "MATHEMATICS-CFE"
+        description: "MATHEMATICS-CFE description"
+        has_children: true
+        label: "CFE_ROOT"
+      }
+      { curriculum_id: "1", topic_label_id: "1", title: "History", topic_unit_title: "HISTORY-CFE", description: "HISTORY-CFE description", has_children: true, label: "CFE_ROOT" }
+      { curriculum_id: "1", topic_label_id: "1", title: "Science", topic_unit_title: "SCIENCE-CFE", description: "SCIENCE-CFE description", has_children: true, label: "CFE_ROOT" }
+    ]
+  ) {
+    returning {
+      curriculum {
+        description
+        has_public_access
+      }
+      description
+      has_children
+      id
+      label
+      parent_id
+      same_as
+      similar_to
+      title
+      curriculum_id
+      topic_label {
+        id
+        sequence
+        title
+      }
+    }
+    affected_rows
+  }
+}

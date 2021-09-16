@@ -1,0 +1,76 @@
+#https://hasura.io/blog/graphql-and-tree-data-structures-with-postgres-on-hasura-dfa13c0d9b5f/
+query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
+  topic(where: { id: { _eq: $topic_id } }) {
+    description
+    has_children
+    id
+    label
+    parent_id
+    title
+    topic_unit_title
+    topic_label_id
+    topics {
+      label
+      title
+      topic_label_id
+      topic_unit_title
+      id
+      has_children
+      parent_id
+      topics {
+        label
+        title
+        topic_label_id
+        topic_unit_title
+        id
+        has_children
+        parent_id
+        topics {
+          label
+          title
+          topic_label_id
+          topic_unit_title
+          id
+          has_children
+          parent_id
+          topics {
+            label
+            title
+            topic_label_id
+            topic_unit_title
+            id
+            has_children
+            parent_id
+            topics {
+              label
+              title
+              topic_label_id
+              topic_unit_title
+              id
+              has_children
+              parent_id
+              topics {
+                label
+                title
+                topic_label_id
+                topic_unit_title
+                id
+                has_children
+                parent_id
+                topics {
+                  label
+                  title
+                  topic_label_id
+                  topic_unit_title
+                  id
+                  has_children
+                  parent_id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
