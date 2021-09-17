@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  karate:
+    #build: ../backend/karate
+    image: navyasolutions/karate:latest
+    container_name: karate
+    ports:
+      - "5900:5900"
+    volumes:
+      # Tests to be run:
+      - ../backend/karate/tests:/src/features
+      # Where results will be generated:
+      - ../backend/karate/results:/src/target
+
+networks:
+  altra_net:
+    driver: bridge

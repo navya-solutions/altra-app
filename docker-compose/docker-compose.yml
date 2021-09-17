@@ -1,5 +1,19 @@
-version: "3.7"
+version: "3.8"
 services:
+  node-server:
+    build:
+      context: ../backend/server
+      target: dev
+    container_name: server
+    volumes:
+      - ../backend/server:/server
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+
   postgres:
     image: postgres:12
     container_name: postgres
@@ -54,20 +68,6 @@ services:
       - elasticsearch
     ports:
       - 5601:5601
-
-  karate:
-    #build: ../backend/karate
-    image: navyasolutions/karate:latest
-    container_name: karate
-    ports:
-      - "5900:5900"
-    depends_on:
-      - "graphql-engine"
-    volumes:
-      # Tests to be run:
-      - ../backend/karate/tests:/src/features
-      # Where results will be generated:
-      - ../backend/karate/results:/src/target
 
 volumes:
   # default dir on Ubuntu: /var/lib/docker/volumes
