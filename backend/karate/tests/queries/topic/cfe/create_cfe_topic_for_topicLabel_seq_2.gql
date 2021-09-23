@@ -5,7 +5,7 @@ mutation create_cfe_topic_for_topicLabel_seq_2 {
         curriculum_id: "1"
         topic_label_id: "2"
         title: "Numaeracy and Mathematics"
-        topic_unit_title: "NUMAERACY_AND_MATHEMATICS-MATHEMATICS-CFE"
+        topic_unit_title: "NUMAERACY_AND_MATHEMATICS#MATHEMATICS#CFE"
         description: "NUMAERACY_AND_MATHEMATICS-MATHEMATICS-CFE description"
         has_children: true
         label: "Subject Area"
@@ -15,7 +15,7 @@ mutation create_cfe_topic_for_topicLabel_seq_2 {
         curriculum_id: "1"
         topic_label_id: "2"
         title: "Social Studies"
-        topic_unit_title: "SOCIAL_STUDIES-HISTORY-CFE"
+        topic_unit_title: "SOCIAL_STUDIES#HISTORY#CFE"
         description: "SOCIAL_STUDIES-HISTORY-CFE description"
         has_children: false
         label: "Subject Area"
@@ -25,7 +25,7 @@ mutation create_cfe_topic_for_topicLabel_seq_2 {
         curriculum_id: "1"
         topic_label_id: "2"
         title: "Social Science"
-        topic_unit_title: "SOCIAL_SCIENCE-SCIENCE-CFE"
+        topic_unit_title: "SOCIAL_SCIENCE#SCIENCE#CFE"
         description: "SOCIAL_SCIENCE-SCIENCE-CFE description"
         has_children: false
         label: "Subject Area"

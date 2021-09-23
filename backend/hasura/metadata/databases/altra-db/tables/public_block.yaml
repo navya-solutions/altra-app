@@ -2,52 +2,52 @@ table:
   name: block
   schema: public
 object_relationships:
-- name: language
-  using:
-    foreign_key_constraint_on: language_id
-- name: topic
-  using:
-    foreign_key_constraint_on: topic_id
+  - name: language
+    using:
+      foreign_key_constraint_on: language_id
+  - name: topic
+    using:
+      foreign_key_constraint_on: topic_id
 array_relationships:
-- name: block_change_requests
-  using:
-    foreign_key_constraint_on:
-      column: block_id
-      table:
-        name: block_change_request
-        schema: public
-- name: block_tags
-  using:
-    foreign_key_constraint_on:
-      column: block_id
-      table:
-        name: block_tag
-        schema: public
+  - name: block_change_requests
+    using:
+      foreign_key_constraint_on:
+        column: block_id
+        table:
+          name: block_change_request
+          schema: public
+  - name: block_tags
+    using:
+      foreign_key_constraint_on:
+        column: block_id
+        table:
+          name: block_tag
+          schema: public
 event_triggers:
-- definition:
-    delete:
-      columns: "*"
-    enable_manual: true
-    insert:
-      columns: "*"
-    update:
-      columns:
-      - last_edited_time
-      - created_time
-      - id
-      - block
-      - ref_block_pid
-      - has_public_access
-      - archived
-      - url
-      - language_id
-      - voting_minus_count
-      - voting_plus_count
-      - topic_id
-      - block_type
-  name: block_events
-  retry_conf:
-    interval_sec: 10
-    num_retries: 0
-    timeout_sec: 60
-  webhook: http://host.docker.internal:7000/block/block_events
+  - definition:
+      delete:
+        columns: "*"
+      enable_manual: true
+      insert:
+        columns: "*"
+      update:
+        columns:
+          - last_edited_time
+          - created_time
+          - id
+          - block
+          - ref_block_pid
+          - has_public_access
+          - archived
+          - url
+          - language_id
+          - voting_minus_count
+          - voting_plus_count
+          - topic_id
+          - block_type
+    name: block_events
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: http://host.docker.internal:3000/block/block_events

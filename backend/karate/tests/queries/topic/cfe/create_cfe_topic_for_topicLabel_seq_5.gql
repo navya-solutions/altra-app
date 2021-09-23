@@ -6,7 +6,7 @@ mutation create_cfe_topic_for_topicLabel_seq_5 {
         topic_label_id: "5"
         parent_id: "10"
         title: "Early"
-        topic_unit_title: "EARLY-ESTIMATION_AND_ROUNDING-CFE"
+        topic_unit_title: "EARLY#ESTIMATION_AND_ROUNDING#CFE"
         description: "EARLY-ESTIMATION_AND_ROUNDING-CFE description"
         has_children: false
         label: "Es and O"
@@ -16,7 +16,7 @@ mutation create_cfe_topic_for_topicLabel_seq_5 {
         topic_label_id: "5"
         parent_id: "10"
         title: "First"
-        topic_unit_title: "FIRST-ESTIMATION_AND_ROUNDING-CFE"
+        topic_unit_title: "FIRST#ESTIMATION_AND_ROUNDING#CFE"
         description: "FIRST-ESTIMATION_AND_ROUNDING-CFE description"
         has_children: false
         label: "Es and O"
@@ -26,7 +26,7 @@ mutation create_cfe_topic_for_topicLabel_seq_5 {
         topic_label_id: "5"
         parent_id: "10"
         title: "Second"
-        topic_unit_title: "SECOND-ESTIMATION_AND_ROUNDING-CFE"
+        topic_unit_title: "SECOND#ESTIMATION_AND_ROUNDING#CFE"
         description: "SECOND-ESTIMATION_AND_ROUNDING-CFE description"
         has_children: false
         label: "Es and O"
@@ -36,7 +36,7 @@ mutation create_cfe_topic_for_topicLabel_seq_5 {
         topic_label_id: "5"
         parent_id: "10"
         title: "Third"
-        topic_unit_title: "THIRD-ESTIMATION_AND_ROUNDING-CFE"
+        topic_unit_title: "THIRD#ESTIMATION_AND_ROUNDING#CFE"
         description: "THIRD-ESTIMATION_AND_ROUNDING-CFE description"
         has_children: false
         label: "Es and O"
@@ -46,7 +46,7 @@ mutation create_cfe_topic_for_topicLabel_seq_5 {
         topic_label_id: "5"
         parent_id: "10"
         title: "Fourth"
-        topic_unit_title: "FOURTH-ESTIMATION_AND_ROUNDING-CFE"
+        topic_unit_title: "FOURTH#ESTIMATION_AND_ROUNDING#CFE"
         description: "FOURTH-ESTIMATION_AND_ROUNDING-CFE description"
         has_children: false
         label: "Es and O"

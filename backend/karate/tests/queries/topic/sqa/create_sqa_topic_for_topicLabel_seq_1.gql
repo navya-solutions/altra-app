@@ -5,7 +5,7 @@ mutation create_sqa_topic_for_topicLabel_seq_1 {
         curriculum_id: "2"
         topic_label_id: "7"
         title: "MATHEMATICS"
-        topic_unit_title: "MATHEMATICS_SQA"
+        topic_unit_title: "MATHEMATICS#SQA"
         description: "MATHEMATICS_SQA description"
         has_children: true
         label: "sqa_root"
@@ -15,7 +15,7 @@ mutation create_sqa_topic_for_topicLabel_seq_1 {
         curriculum_id: "2"
         topic_label_id: "7"
         title: "COMPUTER_SCIENCE"
-        topic_unit_title: "COMPUTER_SCIENCE_SQA"
+        topic_unit_title: "COMPUTER_SCIENCE#SQA"
         description: "COMPUTER_SCIENCE_SQA description"
         has_children: true
         label: "sqa_root"
