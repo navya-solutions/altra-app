@@ -16,6 +16,8 @@ services:
       ELASTIC_SEARCH_URL: http://elasticsearch:9200
     networks:
       - altra_net
+    depends_on:
+      - elasticsearch
 
   postgres:
     image: postgres:12
@@ -51,10 +53,12 @@ services:
 
   elasticsearch:
     container_name: elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
     environment:
       - xpack.security.enabled=false
       - "discovery.type=single-node"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
     networks:
       - altra_net
     ports:
@@ -75,6 +79,7 @@ services:
 volumes:
   # default dir on Ubuntu: /var/lib/docker/volumes
   altra_db_data:
+  es_data:
 
 networks:
   altra_net:

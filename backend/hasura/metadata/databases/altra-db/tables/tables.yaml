@@ -13,5 +13,6 @@
 - "!include public_tag.yaml"
 - "!include public_topic.yaml"
 - "!include public_topic_label.yaml"
+- "!include public_user_comment.yaml"
 - "!include public_users.yaml"
 - "!include public_vote.yaml"

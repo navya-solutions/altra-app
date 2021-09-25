@@ -33,6 +33,13 @@ array_relationships:
       table:
         name: tag
         schema: public
+- name: user_comments
+  using:
+    foreign_key_constraint_on:
+      column: user_id
+      table:
+        name: user_comment
+        schema: public
 - name: votes
   using:
     foreign_key_constraint_on:

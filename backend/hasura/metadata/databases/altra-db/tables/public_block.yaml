@@ -2,64 +2,64 @@ table:
   name: block
   schema: public
 object_relationships:
-  - name: language
-    using:
-      foreign_key_constraint_on: language_id
-  - name: topic
-    using:
-      foreign_key_constraint_on: topic_id
+- name: language
+  using:
+    foreign_key_constraint_on: language_id
+- name: topic
+  using:
+    foreign_key_constraint_on: topic_id
 array_relationships:
-  - name: block_change_requests
-    using:
-      foreign_key_constraint_on:
-        column: block_id
-        table:
-          name: block_change_request
-          schema: public
-  - name: block_tags
-    using:
-      foreign_key_constraint_on:
-        column: block_id
-        table:
-          name: block_tag
-          schema: public
-  - name: tags
-    using:
-      foreign_key_constraint_on:
-        column: block_id
-        table:
-          name: tag
-          schema: public
-  - name: votes
-    using:
-      foreign_key_constraint_on:
-        column: block_id
-        table:
-          name: vote
-          schema: public
+- name: block_change_requests
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: block_change_request
+        schema: public
+- name: block_tags
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: block_tag
+        schema: public
+- name: tags
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: tag
+        schema: public
+- name: votes
+  using:
+    foreign_key_constraint_on:
+      column: block_id
+      table:
+        name: vote
+        schema: public
 event_triggers:
-  - definition:
-      delete:
-        columns: "*"
-      enable_manual: true
-      insert:
-        columns: "*"
-      update:
-        columns:
-          - last_edited_time
-          - archived
-          - language_id
-          - topic_id
-          - ref_block_id
-          - url
-          - block
-          - id
-          - created_time
-          - publicly_accessible
-          - type
-    name: block_events
-    retry_conf:
-      interval_sec: 10
-      num_retries: 0
-      timeout_sec: 60
-    webhook: http://host.docker.internal:3001/block/block_events
+- definition:
+    delete:
+      columns: "*"
+    enable_manual: true
+    insert:
+      columns: "*"
+    update:
+      columns:
+      - last_edited_time
+      - archived
+      - language_id
+      - topic_id
+      - ref_block_id
+      - url
+      - block
+      - id
+      - created_time
+      - publicly_accessible
+      - type
+  name: block_events
+  retry_conf:
+    interval_sec: 10
+    num_retries: 0
+    timeout_sec: 60
+  webhook: http://host.docker.internal:3001/block/block_events
