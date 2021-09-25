@@ -131,7 +131,7 @@ Scenario: Can Create CFE topic for topicLabel sequece 5
 
 Scenario: Get All curriculums with all topics for defined level sequence
     Given def query = read('../queries/curriculum/get_all_curriculums_with_all_topics_for_defined_level_sequence.gql')
-    And def variables = {"label_sequence": 1}
+    And def variables = {"order_id": 1}
     And request { query: '#(query)', variables: '#(variables)' }
     #And header x-hasura-admin-secret = 'admin_secret_for_testing'
     #And header x-hasura-role = 'admin'

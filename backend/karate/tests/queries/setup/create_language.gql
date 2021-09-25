@@ -1,9 +1,9 @@
 mutation create_languages {
-  insert_language(objects: [{ short_code: "EN", title: "English" }, { short_code: "SV", title: "Swedish" }]) {
+  insert_language(objects: [{ code: "EN", name: "English" }, { code: "SV", name: "Swedish" }]) {
     affected_rows
     returning {
-      short_code
-      title
+      code
+      name
       id
     }
   }

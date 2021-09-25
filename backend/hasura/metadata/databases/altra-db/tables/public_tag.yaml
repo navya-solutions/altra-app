@@ -2,24 +2,15 @@ table:
   name: tag
   schema: public
 object_relationships:
-- name: tag
+- name: block
   using:
-    foreign_key_constraint_on: topic_interests_id
-- name: tagByLevelInterestsId
+    foreign_key_constraint_on: block_id
+- name: curriculum
   using:
-    foreign_key_constraint_on: level_interests_id
-array_relationships:
-- name: tags
+    foreign_key_constraint_on: curriculum_id
+- name: topic
   using:
-    foreign_key_constraint_on:
-      column: topic_interests_id
-      table:
-        name: tag
-        schema: public
-- name: tagsByLevelInterestsId
+    foreign_key_constraint_on: topic_id
+- name: user
   using:
-    foreign_key_constraint_on:
-      column: level_interests_id
-      table:
-        name: tag
-        schema: public
+    foreign_key_constraint_on: user_interests_id

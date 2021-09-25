@@ -9,7 +9,6 @@ mutation create_cfe_topic_for_topicLabel_seq_3 {
         topic_unit_title: "NUMBER_MONEY_AND_MEASURE#NUMAERACY_AND_MATHEMATICS#CFE"
         description: "NUMBER_MONEY_AND_MEASURE-NUMAERACY_AND_MATHEMATICS-CFE description"
         has_children: true
-        label: "Benchmark"
       }
       {
         curriculum_id: "1"
@@ -19,7 +18,6 @@ mutation create_cfe_topic_for_topicLabel_seq_3 {
         topic_unit_title: "SHAPE_POSITION_AND_MOVEMENT#NUMAERACY_AND_MATHEMATICS#CFE"
         description: "SHAPE_POSITION_AND_MOVEMENT-NUMAERACY_AND_MATHEMATICS-CFE description"
         has_children: true
-        label: "Benchmark"
       }
       {
         curriculum_id: "1"
@@ -29,27 +27,29 @@ mutation create_cfe_topic_for_topicLabel_seq_3 {
         topic_unit_title: "INFOMATION_HANDLING#NUMAERACY_AND_MATHEMATICS#CFE"
         description: "INFOMATION_HANDLING-NUMAERACY_AND_MATHEMATICS-CFE description"
         has_children: true
-        label: "Benchmark"
       }
     ]
   ) {
     returning {
       curriculum {
         description
-        has_public_access
+        publicly_accessible
       }
       description
       has_children
       id
-      label
+
       parent_id
-      same_as
-      similar_to
+      identical_topics {
+        id
+        topic_id
+        type
+      }
       title
       curriculum_id
       topic_label {
         id
-        sequence
+        order_id
         title
       }
     }

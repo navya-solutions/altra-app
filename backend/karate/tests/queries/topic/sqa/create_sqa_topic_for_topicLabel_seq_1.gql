@@ -1,16 +1,8 @@
 mutation create_sqa_topic_for_topicLabel_seq_1 {
   insert_topic(
     objects: [
-      {
-        curriculum_id: "2"
-        topic_label_id: "7"
-        title: "MATHEMATICS"
-        topic_unit_title: "MATHEMATICS#SQA"
-        description: "MATHEMATICS_SQA description"
-        has_children: true
-        label: "sqa_root"
-      }
-      { curriculum_id: "2", topic_label_id: "7", title: "HISTORY", topic_unit_title: "HISTORY_SQA", description: "HISTORY_SQA description", has_children: true, label: "sqa_root" }
+      { curriculum_id: "2", topic_label_id: "7", title: "MATHEMATICS", topic_unit_title: "MATHEMATICS#SQA", description: "MATHEMATICS_SQA description", has_children: true }
+      { curriculum_id: "2", topic_label_id: "7", title: "HISTORY", topic_unit_title: "HISTORY_SQA", description: "HISTORY_SQA description", has_children: true }
       {
         curriculum_id: "2"
         topic_label_id: "7"
@@ -18,27 +10,28 @@ mutation create_sqa_topic_for_topicLabel_seq_1 {
         topic_unit_title: "COMPUTER_SCIENCE#SQA"
         description: "COMPUTER_SCIENCE_SQA description"
         has_children: true
-        label: "sqa_root"
       }
     ]
   ) {
     returning {
       curriculum {
         description
-        has_public_access
+        publicly_accessible
       }
       description
       has_children
       id
-      label
       parent_id
-      same_as
-      similar_to
+      identical_topics {
+        id
+        topic_id
+        type
+      }
       title
       curriculum_id
       topic_label {
         id
-        sequence
+        order_id
         title
       }
     }

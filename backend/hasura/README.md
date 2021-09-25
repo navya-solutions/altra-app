@@ -32,16 +32,10 @@ inconsistency Manage inconsistent objects in Hasura metadata
 reload        Reload Hasura GraphQL engine metadata on the database
 ```
 
-4.  NOTE! Currently, we are using a Java project for defining, creating, maintaining and migrating project database schema.
-    We will investigate and migrated from Java project solution to hasura CLI databases and its migration feature  
-    Manual changes in the liquibase schema:
+4.  NOTE! Currently, we are using a Java project for defining, creating, maintaining and migrating project database schema. We will migrated from Java project solution to hasura CLI databases and its migration feature, but if we gernate schema from Java solution, following manual changes need to be done:
 
-Remove "pid" as there is no need to maintain another unique key a part from ID in Hasura
-
-- "pid" VARCHAR(255) NOT NULL,
-- "pid" VARCHAR(255),
-- all alter table with"pid"
-- "id" BIGINT --> "id" SERIAL
+- Change "id" BIGINT --> "id" SERIAL
+- Delete "CREATE SEQUENCE"
 
 5. Create migration manually
 
@@ -50,12 +44,12 @@ hasura migrate create altra --database-name altra-db
 ```
 
 6. Above command will create up and down migration SQL files in the migrations directory.
-Now, crete the database connection manully using Hasura console:
-Goto Hasura console, Data tab->Connect Database option to configure postgres DB
+   Now, crete the database connection manully using Hasura console:
+   Goto Hasura console, Data tab->Connect Database option to configure postgres DB
 1. Database Display Name: altra-db
-2. Data Source Driver: PostgreSQL
-3. Connect Database Via: Database URL
-4. Database URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+1. Data Source Driver: PostgreSQL
+1. Connect Database Via: Database URL
+1. Database URL: postgres://postgres:postgrespassword@postgres:5432/postgres
 
 add the SQL statement to the up.sql file and apply the migration by running:
 
@@ -65,7 +59,16 @@ hasura migrate apply
 
 7. Go to hasura console and apply the table and relationships tracking manually.
 
-8. Export GraphQL engine metadata from the database to local repo:
+8. Configure block event
+   Goto the console->events
+   Create new event with following details:
+   Trigger Name=block_events
+   Database=altra-db
+   Schema/Table=public/block
+   Trigger Operations = select all
+   Webhook URL=ttp://host.docker.internal:3000/block/block_events
+
+9. Export GraphQL engine metadata from the database to local repo:
 
 ```shell
 hasura md export

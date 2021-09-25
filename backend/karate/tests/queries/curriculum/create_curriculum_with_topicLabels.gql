@@ -3,37 +3,37 @@ mutation create_curriculum_with_topicLabels {
     objects: [
       {
         description: "Curriculum for Excellence places learners at the heart of education. At its centre are four fundamental capacities..."
-        has_public_access: true
+        publicly_accessible: true
         short_title: "CFE"
-        title: "Curriculum for Excellence"
+        name: "Curriculum for Excellence"
         country_id: "1"
         institution_id: "1"
         topic_labels: {
           data: [
-            { sequence: 1, title: "cfe_root" }
-            { sequence: 2, title: "Subject Area" }
-            { sequence: 3, title: "Benchmark" }
-            { sequence: 4, title: "Curriculum organiser" }
-            { sequence: 5, title: "Es and O" }
-            { sequence: 6, title: "Support Benchmark" }
+            { order_id: 1, title: "cfe_root" }
+            { order_id: 2, title: "Subject Area" }
+            { order_id: 3, title: "Benchmark" }
+            { order_id: 4, title: "Curriculum organiser" }
+            { order_id: 5, title: "Es and O" }
+            { order_id: 6, title: "Support Benchmark" }
           ]
         }
       }
       {
         description: "The Scottish Qualifications Authority is the executive non-departmental public body of the Scottish Government responsible for accrediting educational awards..."
-        has_public_access: true
+        publicly_accessible: true
         short_title: "SQA"
-        title: "Scottish Qualifications Authority"
+        name: "Scottish Qualifications Authority"
         country_id: "1"
         institution_id: "1"
         topic_labels: {
           data: [
-            { sequence: 1, title: "sqa_root" }
-            { sequence: 2, title: "Subject" }
-            { sequence: 3, title: "Section" }
-            { sequence: 4, title: "Part" }
-            { sequence: 5, title: "Key Issue" }
-            { sequence: 6, title: "Key Issue Explanation" }
+            { order_id: 1, title: "sqa_root" }
+            { order_id: 2, title: "Subject" }
+            { order_id: 3, title: "Section" }
+            { order_id: 4, title: "Part" }
+            { order_id: 5, title: "Key Issue" }
+            { order_id: 6, title: "Key Issue Explanation" }
           ]
         }
       }
@@ -42,14 +42,14 @@ mutation create_curriculum_with_topicLabels {
     affected_rows
     returning {
       id
-      has_public_access
+      publicly_accessible
       description
       short_title
-      title
+      name
       topic_labels {
         curriculum_id
         id
-        sequence
+        order_id
         title
       }
     }

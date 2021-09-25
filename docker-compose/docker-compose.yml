@@ -9,10 +9,13 @@ services:
       - ../backend/server:/server
     command: npm run dev
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       NODE_ENV: development
       DEBUG: nodejs-docker-express:*
+      ELASTIC_SEARCH_URL: http://elasticsearch:9200
+    networks:
+      - altra_net
 
   postgres:
     image: postgres:12

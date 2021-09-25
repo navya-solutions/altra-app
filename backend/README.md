@@ -48,10 +48,10 @@ hasura metadata reload
 hasura console
 ```
 
-7. For creating test data Or running test scenarios :
+7. For creating test data Or running test scenarios, do to the docker-compose floder and run :
 
 ```shell
-docker-compose up
+docker-compose -p altra-test -f docker-compose-test.yml up
 ```
 
 Note! Test result repot are generated at backend/karate/results folder

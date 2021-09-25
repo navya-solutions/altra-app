@@ -1,5 +1,5 @@
 table:
-  name: subscription_type
+  name: subscription
   schema: public
 array_relationships:
 - name: users

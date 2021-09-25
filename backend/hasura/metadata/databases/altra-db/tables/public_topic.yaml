@@ -12,12 +12,33 @@ object_relationships:
   using:
     foreign_key_constraint_on: topic_label_id
 array_relationships:
+- name: block_tags
+  using:
+    foreign_key_constraint_on:
+      column: topic_id
+      table:
+        name: block_tag
+        schema: public
 - name: blocks
   using:
     foreign_key_constraint_on:
       column: topic_id
       table:
         name: block
+        schema: public
+- name: identical_topics
+  using:
+    foreign_key_constraint_on:
+      column: topic_id
+      table:
+        name: identical_topic
+        schema: public
+- name: tags
+  using:
+    foreign_key_constraint_on:
+      column: topic_id
+      table:
+        name: tag
         schema: public
 - name: topics
   using:

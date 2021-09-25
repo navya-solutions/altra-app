@@ -1,19 +1,18 @@
 query get_all_curriculums_with_all_topic_labels_and_topics {
   curriculum {
-    has_public_access
+    publicly_accessible
     id
     short_title
-    title
+    name
     institution {
       name
       id
     }
     topic_labels {
-      sequence
+      order_id
       title
       id
       topics {
-        label
         title
         has_children
         description

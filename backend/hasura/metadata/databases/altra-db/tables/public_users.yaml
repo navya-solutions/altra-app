@@ -8,6 +8,35 @@ object_relationships:
 - name: role
   using:
     foreign_key_constraint_on: role_id
-- name: subscription_type
+- name: subscription
   using:
     foreign_key_constraint_on: subscription_id
+array_relationships:
+- name: block_change_requests
+  using:
+    foreign_key_constraint_on:
+      column: user_id
+      table:
+        name: block_change_request
+        schema: public
+- name: curriculum_change_requests
+  using:
+    foreign_key_constraint_on:
+      column: user_id
+      table:
+        name: curriculum_change_request
+        schema: public
+- name: tags
+  using:
+    foreign_key_constraint_on:
+      column: user_interests_id
+      table:
+        name: tag
+        schema: public
+- name: votes
+  using:
+    foreign_key_constraint_on:
+      column: user_id
+      table:
+        name: vote
+        schema: public

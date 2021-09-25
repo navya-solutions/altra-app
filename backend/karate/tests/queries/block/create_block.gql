@@ -1,17 +1,20 @@
-mutation create_bolck($block_spec: jsonb) {
-  insert_block(objects: { archived: false, block_type: "page", has_public_access: false, topic_id: "1", block: $block_spec }) {
+mutation create_block($block_spec: jsonb) {
+  insert_block(objects: { archived: false, type: "page", publicly_accessible: false, language_id: 1, topic_id: "13", block: $block_spec }) {
     affected_rows
     returning {
       block
       archived
-      block_type
+      type
       created_time
-      has_public_access
+      publicly_accessible
       id
       topic_id
       url
-      voting_minus_count
-      voting_plus_count
+      votes {
+        id
+        user_id
+        user_comment
+      }
     }
   }
 }

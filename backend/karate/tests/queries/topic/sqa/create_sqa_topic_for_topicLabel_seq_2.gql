@@ -8,7 +8,6 @@ mutation create_sqa_topic_for_topicLabel_seq_2 {
         topic_unit_title: "NUMAERACY_AND_MATHEMATICS#MATHEMATICS#SQA"
         description: "NUMAERACY_AND_MATHEMATICS-MATHEMATICS_SQA description"
         has_children: true
-        label: "Subject"
         parent_id: "4"
       }
       {
@@ -18,7 +17,6 @@ mutation create_sqa_topic_for_topicLabel_seq_2 {
         topic_unit_title: "SOCIAL_STUDIES#HISTORY#SQA"
         description: "SOCIAL_STUDIES-HISTORY_SQA description"
         has_children: false
-        label: "Subject"
         parent_id: "5"
       }
       {
@@ -28,7 +26,6 @@ mutation create_sqa_topic_for_topicLabel_seq_2 {
         topic_unit_title: "SOCIAL_STUDIES#CFE"
         description: "SOCIAL_STUDIES_CFE description"
         has_children: false
-        label: "Subject"
         parent_id: "6"
       }
     ]
@@ -36,20 +33,23 @@ mutation create_sqa_topic_for_topicLabel_seq_2 {
     returning {
       curriculum {
         description
-        has_public_access
+        publicly_accessible
       }
       description
       has_children
       id
-      label
+
       parent_id
-      same_as
-      similar_to
+      identical_topics {
+        id
+        topic_id
+        type
+      }
       title
       curriculum_id
       topic_label {
         id
-        sequence
+        order_id
         title
       }
     }

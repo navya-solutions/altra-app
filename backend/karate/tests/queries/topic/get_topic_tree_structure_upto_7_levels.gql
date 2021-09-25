@@ -4,13 +4,12 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
     description
     has_children
     id
-    label
+
     parent_id
     title
     topic_unit_title
     topic_label_id
     topics {
-      label
       title
       topic_label_id
       topic_unit_title
@@ -18,7 +17,6 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
       has_children
       parent_id
       topics {
-        label
         title
         topic_label_id
         topic_unit_title
@@ -26,7 +24,6 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
         has_children
         parent_id
         topics {
-          label
           title
           topic_label_id
           topic_unit_title
@@ -34,7 +31,6 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
           has_children
           parent_id
           topics {
-            label
             title
             topic_label_id
             topic_unit_title
@@ -42,7 +38,6 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
             has_children
             parent_id
             topics {
-              label
               title
               topic_label_id
               topic_unit_title
@@ -50,7 +45,6 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
               has_children
               parent_id
               topics {
-                label
                 title
                 topic_label_id
                 topic_unit_title
@@ -58,7 +52,6 @@ query get_topic_tree_structure_upto_7_levels($topic_id: Int) {
                 has_children
                 parent_id
                 topics {
-                  label
                   title
                   topic_label_id
                   topic_unit_title

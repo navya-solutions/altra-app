@@ -1,19 +1,18 @@
-query get_all_curriculum_with_all_topics_for_defined_level_sequence($label_sequence: Int) {
+query get_all_curriculum_with_all_topics_for_defined_level_sequence($order_id: Int) {
   curriculum {
-    has_public_access
+    publicly_accessible
     id
     short_title
-    title
+    name
     institution {
       name
       id
     }
-    topic_labels(where: { sequence: { _eq: $label_sequence } }) {
-      sequence
+    topic_labels(where: { order_id: { _eq: $order_id } }) {
+      order_id
       title
       id
       topics {
-        label
         title
         has_children
         description

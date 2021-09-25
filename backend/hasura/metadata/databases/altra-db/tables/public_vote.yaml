@@ -1,10 +1,10 @@
 table:
-  name: curriculum_change_request
+  name: vote
   schema: public
 object_relationships:
-- name: curriculum
+- name: block
   using:
-    foreign_key_constraint_on: curriculum_id
+    foreign_key_constraint_on: block_id
 - name: user
   using:
     foreign_key_constraint_on: user_id

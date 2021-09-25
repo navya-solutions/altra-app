@@ -3,7 +3,7 @@
 ## Commands
 
 1. To build docker containers
-   docker-compose -p altra-core build
+   docker-compose --verbose -p altra-core build --no-cache
 
 2. To run docker containers
    docker-compose -p altra-core up -d
