@@ -14,5 +14,8 @@
 - "!include public_topic.yaml"
 - "!include public_topic_label.yaml"
 - "!include public_user_comment.yaml"
+- "!include public_user_curriculum_access.yaml"
+- "!include public_user_invitation.yaml"
+- "!include public_user_topic_access.yaml"
 - "!include public_users.yaml"
 - "!include public_vote.yaml"

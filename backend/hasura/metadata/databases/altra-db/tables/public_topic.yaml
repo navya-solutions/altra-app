@@ -47,3 +47,10 @@ array_relationships:
       table:
         name: topic
         schema: public
+- name: user_topic_accesses
+  using:
+    foreign_key_constraint_on:
+      column: topic_id
+      table:
+        name: user_topic_access
+        schema: public
