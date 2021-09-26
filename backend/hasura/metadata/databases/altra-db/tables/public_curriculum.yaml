@@ -37,3 +37,10 @@ array_relationships:
       table:
         name: topic
         schema: public
+- name: user_curriculum_accesses
+  using:
+    foreign_key_constraint_on:
+      column: curriculum_id
+      table:
+        name: user_curriculum_access
+        schema: public

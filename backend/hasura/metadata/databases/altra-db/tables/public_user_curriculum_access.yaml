@@ -1,0 +1,10 @@
+table:
+  name: user_curriculum_access
+  schema: public
+object_relationships:
+- name: curriculum
+  using:
+    foreign_key_constraint_on: curriculum_id
+- name: user
+  using:
+    foreign_key_constraint_on: user_curriculum_access_id

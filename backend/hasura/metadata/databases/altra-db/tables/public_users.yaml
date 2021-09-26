@@ -40,6 +40,27 @@ array_relationships:
       table:
         name: user_comment
         schema: public
+- name: user_curriculum_accesses
+  using:
+    foreign_key_constraint_on:
+      column: user_curriculum_access_id
+      table:
+        name: user_curriculum_access
+        schema: public
+- name: user_invitations
+  using:
+    foreign_key_constraint_on:
+      column: user_invitation_id
+      table:
+        name: user_invitation
+        schema: public
+- name: user_topic_accesses
+  using:
+    foreign_key_constraint_on:
+      column: user_topic_access_id
+      table:
+        name: user_topic_access
+        schema: public
 - name: votes
   using:
     foreign_key_constraint_on:
