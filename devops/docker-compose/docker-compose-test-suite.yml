@@ -8,9 +8,9 @@ services:
       - "5900:5900"
     volumes:
       # Tests to be run:
-      - ../backend/karate/tests:/src/features
+      - ../../backend/karate/tests:/src/features
       # Where results will be generated:
-      - ../backend/karate/results:/src/target
+      - ../../backend/karate/results:/src/target
 
 networks:
   altra_net:
